@@ -1,0 +1,138 @@
+.hero {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+  
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../public/images/banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(1px); /* Apply blur to the background image */
+  z-index: -1; /* Ensure the pseudo-element is behind other content */
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Black tint with 50% opacity */
+  z-index: -1; /* Keeps it behind the text */
+}
+
+.hero .container {
+  padding-top: 15%;
+}
+.hero h1 {
+  color: #ffff;
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 6040;
+  font-style: italic;
+  margin-top: -25px;
+
+}
+.hero p {
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+form {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+form input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 5px;
+  border-radius: 5px;
+}
+form span {
+  font-size: 14px;
+  color: grey;
+}
+input::placeholder {
+  font-size: 17px;
+  color: black;
+}
+form .box {
+  padding: 15px;
+  border-left: 1px solid rgba(128, 128, 128, 0.2);
+}
+form .box:nth-child(1) {
+  border-left: none;
+}
+form h4 {
+  font-weight: 500;
+}
+
+.btn9{
+  padding: 10px 20px; /* Adjust button size */
+  color: #fff; /* Button text color */
+  border: none; /* Removes border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Optional: Pointer cursor for hover */
+  width: 160px;
+  height: 45px;
+  font-weight: 700;
+  background-color: #6636CC;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.dic{
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 800px) {
+
+  .hero{
+    height: 60%;
+  }
+
+  .hero::after{
+    height: 60%;
+  }
+
+  .hero::before{
+    height: 60%;
+  }
+
+  .hero h1{
+    margin-top: 5px;
+  }
+
+  .hero .container {
+    padding-top: 14%;
+    margin-bottom: 14%;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  form .box {
+    border-left: none;
+  }
+  form input {
+    width: 100%;
+  }
+}
