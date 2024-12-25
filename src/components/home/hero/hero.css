@@ -14,7 +14,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url("../../../../public/images/banner.png");
+  background-image: url("../../../assets/banner.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -29,7 +29,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Black tint with 50% opacity */
+  background-color: rgba(0, 0, 0, 0.4); /* Black tint with 50% opacity */
   z-index: -1; /* Keeps it behind the text */
 }
 

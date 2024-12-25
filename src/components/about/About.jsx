@@ -2,6 +2,7 @@ import React from "react"
 import Back from "../common/Back"
 import Heading from "../common/Heading"
 import img from "../images/about.jpg"
+import abt from "@/assets/immio.jpg"
 import "./about.css"
 
 const About = () => {
@@ -28,7 +29,7 @@ const About = () => {
 
           </div>
           <div className='right row'>
-            <img src='./immio.jpg' alt='' />
+            <img src={abt} alt='' />
           </div>
         </div>
       </section>

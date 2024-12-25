@@ -5,19 +5,32 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  { 
+    ignores: ['dist'] 
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        module: true,
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: { 
+      react: { version: '18.3' },
+      // Add this to handle image imports
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.png', '.jpg', '.jpeg', '.gif', '.svg']
+        }
+      }
+    },
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -31,8 +44,13 @@ export default [
       'react/jsx-no-target-blank': 'off',
       'react-refresh/only-export-components': [
         'warn',
-        { allowConstantExport: true },
+        { allowConstantExport: true }
       ],
+      // Add this to allow image imports
+      'import/no-unresolved': [
+        2,
+        { caseSensitive: false }
+      ]
     },
   },
 ]
