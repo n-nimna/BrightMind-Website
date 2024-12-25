@@ -66,3 +66,70 @@ header .toggle {
     color: #fff;
   }
 }
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0;
+    height: auto;
+    box-shadow: none;
+    position: relative;
+  }
+
+  header .toggle {
+    display: block;
+    font-size: 24px; /* Clear toggle icon size */
+    color: #6636CC;
+    margin: 15px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  header .nav .flex {
+    display: none; /* Initially hidden navigation */
+    flex-direction: column;
+    align-items: center;
+    background: #6636CC;
+    padding: 15px 0;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  header .nav.active {
+    display: flex; /* Display navigation when active */
+  }
+
+  header .nav li {
+    list-style: none;
+    margin: 10px 0;
+  }
+
+  header .nav li a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px 5px;
+    border-radius: 30px;
+    background: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  header .nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+  }
+
+  header h4, header .button {
+    display: none; /* Hide non-essential elements */
+  }
+
+  header span {
+    font-size: 12px; /* Adjust badge size */
+    padding: 2px 8px;
+  }
+}
